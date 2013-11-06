@@ -118,12 +118,12 @@ public class UHPluginListener implements Listener {
 	
 	@EventHandler
 	public void onBlockBreakEvent(final BlockBreakEvent ev) {
-		if (!this.p.isGameRunning()) ev.setCancelled(true);
+		if (!this.p.isGameRunning() && !ev.getPlayer().isOp()) ev.setCancelled(true);
 	}
 	
 	@EventHandler
 	public void onBlockPlaceEvent(final BlockPlaceEvent ev) {
-		if (!this.p.isGameRunning()) ev.setCancelled(true);
+		if (!this.p.isGameRunning() && !ev.getPlayer().isOp()) ev.setCancelled(true);
 	}
 	
 	@EventHandler
